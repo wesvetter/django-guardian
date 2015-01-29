@@ -70,7 +70,7 @@ class ObjectPermissionChecker(object):
             if self.user:
                 fieldname = '%s__group__%s' % (
                     group_rel_name,
-                    User.groups.field.related_query_name(),
+                    User.organizations.field.related_query_name(),
                 )
                 group_filters = {fieldname: self.user}
             else:

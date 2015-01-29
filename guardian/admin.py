@@ -135,7 +135,7 @@ class GuardedModelAdmin(admin.ModelAdmin):
             qs = qs.filter(**filters)
         if self.user_can_access_owned_by_group_objects_only:
             User = get_user_model()
-            user_rel_name = User.groups.field.related_query_name()
+            user_rel_name = User.organizations.field.related_query_name()
             qs_key = '%s__%s' % (self.group_owned_objects_field, user_rel_name)
             filters = {qs_key: request.user}
             qs = qs.filter(**filters)
